@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY6 팬 정보 입력</title>
+    <style>
+      /* 전체 페이지 스타일 */
+      body {
+        display: flex;
+        justify-content: center; /* 가로방향 중앙 정렬 */
+        align-items: center; /* 세로방향 상단 정렬 */
+        flex-direction: column;
+        min-height: 100vh; /* 화면 최소 높이 설정 */
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+      }
+
+      /* 제목을 상단에 위치시키기 위한 스타일 */
+      header h2 {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      /* 폼 스타일 */
+      form {
+        display: flex;
+        flex-direction: row; /* 행 방향으로 정렬 */
+        justify-content: space-between; /* 필드셋 사이 간격 */
+        flex-wrap: wrap; /* 화면 크기에 맞게 줄 바꿈 가능 */
+        width: 100%;
+        max-width: 1100px; /* 최대 너비 확장 */
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      /* 필드셋 스타일 */
+      fieldset {
+        width: 48%; /* 각 필드셋의 너비를 48%로 설정 */
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+
+      /* 입력 필드 및 선택 상자 스타일 */
+      input[type="text"], input[type="email"], input[type="date"], select, textarea {
+        width: 100%; /* 입력 필드가 100% 넓이 차지 */
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      /* 라디오 버튼 및 체크박스 스타일 */
+      input[type="radio"], input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      /* 버튼 스타일 */
+      button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="reset"] {
+        background-color: #f0f0f0;
+        color: black;
+      }
+
+      /* 버튼들 아래 정렬 */
+      .button-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+    </style>
+    <script>
+      function submitForm(event) { // 폼 제출 처리
+        event.preventDefault(); // 기본 폼 제출 동작을 막기기
+
+        // 각 입력 필드의 값을 변수로 저장
+        const email = document.getElementById("email").value;
+        const name = document.getElementById("name").value;
+        const birth = document.getElementById("birth").value;
+        const gender = document.querySelector('input[name="gender"]:checked').value;
+        const favMember = document.getElementById("fav_member").value;
+
+        // 체크된 앨범들을 배열에 저장
+        let albums = [];
+        const albumCheckboxes = document.getElementsByName("albums");
+        for (let i = 0; i < albumCheckboxes.length; i++) {
+          if (albumCheckboxes[i].checked) {
+            albums.push(albumCheckboxes[i].value);
+          }
+        }
+
+        // 앨범 배열을 문자열로 변환
+        const albumsString = albums.join(", ");
+
+        const comment = document.getElementById("comment").value;
+
+        // 구글 스프레드시트로 폼 데이터를 전송
+        fetch("https://script.google.com/macros/s/AKfycbxGmo8bayB0kewO0qzeRy4pzFydM9x7WuFLjtydDWHNPiKu7bTgPZDL7mlInWNMOjob1g/exec", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&birth=${encodeURIComponent(birth)}&gender=${encodeURIComponent(gender)}&fav_member=${encodeURIComponent(favMember)}&albums=${encodeURIComponent(albumsString)}&comment=${encodeURIComponent(comment)}`
+        })
+        .then(response => {
+          alert("폼 제출이 완료되었습니다!"); // 성공적으로 제출되면 알림
+        })
+        .catch(error => {
+          alert("전송 실패: " + error.message); // 실패 시 오류 메시지 출력
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h2>DAY6 설문조사</h2>
+    </header>
+
+    <main>
+      <form onsubmit="submitForm(event)">
+        <fieldset>
+          <legend>MYDAY 정보</legend>
+          <br>
+          <!-- 이름 입력란 -->
+          <label for="name">이름:</label><br>
+          <input type="text" id="name" name="name" required placeholder="이름을 입력하세요"><br><br>
+
+          <!-- 이메일 입력란 -->
+          <label for="email">이메일:</label><br>
+          <input type="email" id="email" name="email" required placeholder="이메일을 입력하세요"><br><br>
+
+          <!-- 생년월일 입력란 -->
+          <label for="birth">생년월일:</label><br>
+          <input type="date" id="birth" name="birth" placeholder="생년월일을 선택하세요"><br><br>
+
+          <!-- 성별 선택 -->
+          <label for="gender">성별:</label><br>
+          <input type="radio" name="gender" value="여성" required> 여성
+          <input type="radio" name="gender" value="남성" required> 남성
+        </fieldset>
+        <fieldset>
+          <legend>DAY6 관련</legend>
+          <br>
+          <!-- 가장 좋아하는 멤버 선택 -->
+          <label for="fav_member">가장 좋아하는 멤버:</label><br>
+          <select name="fav_member" id="fav_member">
+            <option value="all">ALL</option>
+            <option value="성진">성진</option>
+            <option value="Young K">Young K</option>
+            <option value="원필">원필</option>
+            <option value="도운">도운</option>
+          </select><br><br>
+
+          <!-- 좋아하는 앨범 (복수 선택 가능) -->
+          <label>좋아하는 앨범 (복수 선택 가능):</label><br>
+          <input type="checkbox" name="albums" value="The Day"> The Day<br>
+          <input type="checkbox" name="albums" value="DAYDREAM"> DAYDREAM<br>
+          <input type="checkbox" name="albums" value="SUNRISE"> SUNRISE<br>
+          <input type="checkbox" name="albums" value="MOONRISE"> MOONRISE<br>
+          <input type="checkbox" name="albums" value="Shoot Me : Youth Part 1"> Shoot Me : Youth Part 1<br>
+          <input type="checkbox" name="albums" value="Remember US : Youth Part 2"> Remember US : Youth Part 2<br>
+          <input type="checkbox" name="albums" value="The Book of Us : Gravity"> The Book of Us : Gravity<br>
+          <input type="checkbox" name="albums" value="The Book of Us : Entropy"> The Book of Us : Entropy<br>
+          <input type="checkbox" name="albums" value="The Book of Us : The Demon"> The Book of Us : The Demon<br>
+          <input type="checkbox" name="albums" value="The Book of Us : Negentropy - Chaos swallowed up in love"> The Book of Us : Negentropy<br>
+          <input type="checkbox" name="albums" value="Fourever"> Fourever<br>
+          <input type="checkbox" name="albums" value="Band Aid"> Band Aid<br><br>
+
+          <!-- 응원 메시지 입력란 -->
+          <label for="comment">응원 메시지:</label><br>
+          <textarea id="comment" name="comment" rows="5" cols="40" placeholder="DAY6 멤버들에게 한 마디 남겨주세요!"></textarea><br><br>
+        </fieldset>
+
+        <!-- 버튼들이 두 필드셋 아래에 완전히 정렬되도록 추가 -->
+        <div class="button-container">
+          <button type="submit">제출하기</button>
+          <button type="reset">다시 작성하기</button>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 20231344 김예담 과제</p>
+    </footer>
+  </body>
+</html>

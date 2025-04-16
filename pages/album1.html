@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Day</title>
+    <style>
+      /* 전체 페이지 스타일 설정 */
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f2f2f2;
+        margin: 30px;
+        color: #333;
+      }
+
+      /* 제목 스타일 */
+      h2, h3 {
+        color: #444;
+      }
+
+      /* 표(table) 기본 설정 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      /* 표의 셀 설정 */
+      th, td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      /* 표 제목행 스타일 */
+      th {
+        background-color: #f7f7f7;
+        font-weight: 600;
+      }
+
+      /* 마지막 행의 border 제거 */
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* 이미지 스타일 - 모서리를 둥글게 */
+      img {
+        border-radius: 8px;
+      }
+
+      /* 수평선 스타일 */
+      hr {
+        border: none;
+        height: 1px;
+        background-color: #ccc;
+        margin: 40px 0 20px 0;
+      }
+
+      /* 리스트 스타일 제거 */
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      /* 리스트 항목 간격 */
+      li {
+        margin-bottom: 8px;
+      }
+
+      /* 링크 스타일 */
+      a {
+        color: #0077cc;
+        text-decoration: none;
+      }
+
+      /* 링크 마우스오버 효과 */
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* 유튜브 영상 카드 간격 */
+      .video-card {
+        margin: 15px 0 30px 0;
+      }
+
+      tbody tr:hover {
+        background-color: #e8f4fd; /* 밝은 하늘색 배경 */
+        cursor: pointer; /* 마우스 포인터 변경 (선택 사항) */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 앨범 제목 -->
+    <h2>The Day</h2>
+    <hr>
+
+    <!-- 앨범 정보 -->
+    <h3>미니 1집</h3>
+    <ul>
+      <!-- 멜론 링크 -->
+      <li><a href="https://www.melon.com/album/detail.htm?albumId=2638778" target="_blank">노래 듣기(melon)</a></li>
+      <!-- 유튜브 링크 -->
+      <li><a href="https://youtu.be/x3sFsHrUyLQ?feature=shared" target="_blank">뮤비 보기(Youtube)</a></li>
+    </ul>
+
+    <!-- 유튜브 영상 삽입 -->
+    <div class="video-card">
+      <iframe width="320" height="180" 
+        src="https://www.youtube.com/embed/x3sFsHrUyLQ" 
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    <!-- 앨범 정보 표 -->
+    <div>
+      <table border="1"> 
+        <thead>
+          <tr>
+            <th>앨범이미지</th>
+            <th>앨범명</th>
+            <th>출시일</th>
+            <th>구분</th>
+            <th>타이틀</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- 앨범 이미지 (클릭 시 상세페이지 이동) -->
+            <td>
+              <a href="pages/album1.html">
+                <img src="./media/album1.png" alt="The Day" width="100" height="100" 
+                    title="이미지를 클릭하면 The Day 상세페이지로 이동합니다.">
+              </a>
+            </td>
+            <!-- 앨범 상세 정보 -->
+            <td>The Day</td>
+            <td>2015.09.07</td>
+            <td>미니</td>
+            <td>3. Congratulations</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <!-- 앨범 판매처 안내 -->
+    <h3>앨범 판매처</h3>
+    <h4>* 절판</h4>
+  </body>
+</html>
