@@ -4,17 +4,20 @@
     <meta charset="utf-8">
     <title>Every DAY6</title>
     <style>
+      /* 전체 페이지 기본 스타일 */
       body {
         font-family: 'Segoe UI', sans-serif;
         background-color: #f2f2f2;
         margin: 30px;
         color: #333;
       }
-  
+
+      /* 제목 스타일 */
       h2, h3 {
         color: #444;
       }
-  
+
+      /* 테이블 전체 스타일 */
       table {
         width: 100%;
         border-collapse: collapse;
@@ -23,62 +26,80 @@
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       }
-  
+
+      /* 테이블 셀 스타일 */
       th, td {
         padding: 15px;
         text-align: center;
         border-bottom: 1px solid #eee;
       }
-  
+
+      /* 테이블 헤더 스타일 */
       th {
         background-color: #f7f7f7;
         font-weight: 600;
       }
-  
+
+      /* 마지막 행 구분선 제거 */
       tr:last-child td {
         border-bottom: none;
       }
-  
+
+      /* 이미지 둥근 테두리 */
       img {
         border-radius: 8px;
       }
-  
+
+      /* 수평선 스타일 */
       hr {
         border: none;
         height: 1px;
         background-color: #ccc;
         margin: 40px 0 20px 0;
       }
-  
+
+      /* 리스트 스타일 제거 */
       ul {
         list-style: none;
         padding: 0;
       }
-  
+
+      /* 리스트 항목 간격 */
       li {
         margin-bottom: 8px;
       }
-  
+
+      /* 링크 스타일 */
       a {
         color: #0077cc;
         text-decoration: none;
       }
-  
+
+      /* 마우스 오버 시 링크 밑줄 */
       a:hover {
         text-decoration: underline;
       }
-  
+
+      /* 유튜브 영상 간격 */
       .video-card {
         margin: 15px 0 30px 0;
+      }
+
+      /* 테이블 행 hover 효과 */
+      tbody tr:hover {
+        background-color: #e8f4fd;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
+    <!-- 페이지 제목 -->
     <h2>Every DAY6</h2>
     <hr>
     <h3>싱글</h3>
     <h4>노래 듣기(melon)</h4>
     <ul>
+      <!-- 각 곡별 멜론 링크 -->
       <li><a href="https://www.melon.com/album/detail.htm?albumId=10028987" target="_blank">아 왜 (I Wait)</a></li>
       <li><a href="https://www.melon.com/album/detail.htm?albumId=10036099" target="_blank">예뻤어</a></li>
       <li><a href="https://www.melon.com/album/detail.htm?albumId=10043181" target="_blank">어떻게 말해</a></li>
@@ -89,7 +110,8 @@
       <li><a href="https://www.melon.com/album/detail.htm?albumId=10093986" target="_blank">I Loved You</a></li>
       <li><a href="https://www.melon.com/album/detail.htm?albumId=10100430" target="_blank">그렇더라고요</a></li>
       <li><a href="https://www.melon.com/album/detail.htm?albumId=10109058" target="_blank">혼자야</a></li>
-      
+
+      <!-- 유튜브 뮤직비디오 링크 목록 -->
       <h4>뮤비 보기(Youtube)</h4>
       <li><a href="https://youtu.be/O3nFopIjmjI?feature=shared" target="_blank">아 왜 (I Wait)</a></li>
       <li><a href="https://youtu.be/siF3GM68IDE?feature=shared" target="_blank">예뻤어</a></li>
@@ -102,6 +124,8 @@
       <li><a href="https://youtu.be/qWQ1xOfUNYQ?feature=shared" target="_blank">그렇더라고요</a></li>
       <li><a href="https://youtu.be/Fd-elEnkInw?feature=shared" target="_blank">혼자야</a></li>
     </ul>
+
+    <!-- 뮤비 삽입 -->
     <div class="video-card">
       <iframe width="320" height="180" 
         src="https://www.youtube.com/embed/O3nFopIjmjI" 
@@ -110,8 +134,10 @@
         allowfullscreen>
       </iframe>
     </div>
-    
+
     <br>
+
+    <!-- 앨범 테이블 -->
     <div>
       <table border="1"> 
         <thead>
@@ -125,6 +151,7 @@
         </thead>
         <tbody>
           <tr>
+            <!-- 앨범 이미지  -->
             <td><img src="./media/album3.png" alt="Every DAY6" width="100" height="100" </td>
             <td>Every DAY6</td>
             <td>2017</td>
@@ -145,7 +172,10 @@
         </tbody>
       </table>
     </div>
+
     <hr>
+
+    <!-- 앨범 판매 정보 -->
     <h3>앨범판매처</h3>
     <h4>* 미발매</h4>
   </body>

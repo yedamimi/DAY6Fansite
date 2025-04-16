@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8"> 
     <title>데이식스</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="author" content="김예담">
+    <meta name="description" content="DAY6의 앨범을 소개하는 팬 웹페이지입니다.">
+    <link rel="stylesheet" href="style.css"> <!-- 외부 CSS 파일 연결 -->
   </head>
   <body>
     <header>
@@ -12,7 +14,7 @@
       <h2>목차</h2>
       <nav>
         <ul>
-          <li><a href="#overview">소개</a></li>
+          <li><a href="#overview">소개</a></li> 
           <li><a href="#sns">SNS</a></li>
           <li><a href="#album_list">앨범</a></li>
           <li><a href="form.html"><mark style="background-color: #ffff99; color:red; text-decoration: underline;">설문조사(form)</mark></a></li>
@@ -21,7 +23,7 @@
     </header>
     <hr>
     <main>
-      <section id="overview">
+      <section id="overview"> <!-- 소개 섹션 -->
         <h2>소개</h2>
         <p>
           <img src="./media/day6.png" alt="The Day" width="250"><br><br>
@@ -29,7 +31,7 @@
         </p>
       </section>
       <hr>
-      <section id="sns">
+      <section id="sns"> <!-- SNS 섹션 -->
         <h2>SNS</h2>
         <ul>
           <li><a href="https://day6.jype.com/" target="_blank">공식홈페이지</a></li>
@@ -40,20 +42,21 @@
         </ul>
       </section>
       <hr>
-      <section id="album_list">
+      <section id="album_list"> <!-- 앨범 목록 섹션 -->
         <h2>앨범 (이미지 Click)</h2>
-        <table border="1">
+        <table border="1"> <!-- 앨범 정보를 테이블로 표시 -->
           <thead>
             <tr>
-              <th>번호</th>
-              <th>앨범이미지</th>
-              <th>앨범명</th>
-              <th>출시일</th>
-              <th>구분</th>
-              <th>타이틀</th>
+              <th>번호</th> <!-- 번호 열 -->
+              <th>앨범이미지</th> <!-- 앨범 이미지 열 -->
+              <th>앨범명</th> <!-- 앨범명 열 -->
+              <th>출시일</th> <!-- 출시일 열 -->
+              <th>구분</th> <!-- 구분 열 (미니, 정규 등) -->
+              <th>타이틀</th> <!-- 타이틀 열 -->
             </tr>
           </thead>
           <tbody>
+            <!-- 각 앨범에 대한 정보 -->
             <tr>
               <td>1</td>
               <td><a href="pages/album1.html"><img src="./media/album1.png" alt="The Day" width="100" height="100" title="이미지를 클릭하면 The Day 상세페이지로 이동합니다."></a></td>
@@ -107,7 +110,7 @@
             </tr>
             <tr>
               <td>6</td>
-              <td><a href="pages/place6.html"><img src="./media/album6.png" alt="Shoot Me" width="100" height="100"></a></td>
+              <td><a href="pages/album6.html"><img src="./media/album6.png" alt="Shoot Me" width="100" height="100"></a></td>
               <td>Shoot Me : Youth Part 1</td>
               <td>2018.06.26</td>
               <td>미니</td>
@@ -182,8 +185,9 @@
       </section>
     </main>
     <br>
-    <footer>
-      <p>&copy; 20231344 김예담 과제</p>
+      <footer>
+        <p>&copy; 제작자 : 김예담, 이메일: 990624yd@naver.com</p>
+        <p>본 페이지는 DAY6 팬을 위한 비공식 앨범 소개 사이트입니다.</p>
     </footer>
   </body>
 </html>

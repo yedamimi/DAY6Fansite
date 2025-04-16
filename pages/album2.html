@@ -4,17 +4,20 @@
     <meta charset="utf-8">
     <title>DAYDREAM</title>
     <style>
+      /* 전체 페이지 기본 스타일 설정 */
       body {
         font-family: 'Segoe UI', sans-serif;
         background-color: #f2f2f2;
         margin: 30px;
         color: #333;
       }
-  
+
+      /* 제목 텍스트 색상 */
       h2, h3 {
         color: #444;
       }
-  
+
+      /* 표(table) 스타일 설정 */
       table {
         width: 100%;
         border-collapse: collapse;
@@ -23,64 +26,84 @@
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       }
-  
+
+      /* 표 내부 셀 스타일 */
       th, td {
         padding: 15px;
         text-align: center;
         border-bottom: 1px solid #eee;
       }
-  
+
+      /* 표 헤더 배경 및 강조 */
       th {
         background-color: #f7f7f7;
         font-weight: 600;
       }
-  
+
+      /* 표의 마지막 행은 하단 테두리 제거 */
       tr:last-child td {
         border-bottom: none;
       }
-  
+
+      /* 이미지 모서리를 둥글게 */
       img {
         border-radius: 8px;
       }
-  
+
+      /* 구분선 스타일 */
       hr {
         border: none;
         height: 1px;
         background-color: #ccc;
         margin: 40px 0 20px 0;
       }
-  
+
+      /* 목록 스타일 제거 및 여백 설정 */
       ul {
         list-style: none;
         padding: 0;
       }
-  
+
+      /* 목록 항목 간 여백 */
       li {
         margin-bottom: 8px;
       }
-  
+
+      /* 링크 색상 및 밑줄 제거 */
       a {
         color: #0077cc;
         text-decoration: none;
       }
-  
+
+      /* 링크에 마우스 올렸을 때 밑줄 표시 */
       a:hover {
         text-decoration: underline;
       }
-  
+
+      /* 유튜브 영상 카드 간격 설정 */
       .video-card {
         margin: 15px 0 30px 0;
+      }
+      tbody tr:hover {
+        background-color: #e8f4fd; /* 밝은 하늘색 배경 */
+        cursor: pointer; /* 마우스 포인터 변경 */
       }
     </style>
   </head>
   <body>
+    <!-- 앨범 제목 -->
     <h2>DAYDREAM</h2>
     <hr>
+    
+    <!-- 앨범 소개 -->
     <h3>미니 2집</h3>
     <ul>
+      <!-- 음원 사이트 및 뮤비 링크 -->
       <li><a href="https://www.melon.com/album/detail.htm?albumId=2676264" target="_blank">노래 듣기(melon)</a></li>
       <li><a href="https://youtu.be/1-1TGNmQqZA?feature=shared" target="_blank">뮤비 보기(Youtube)</a></li>
     </ul>
+
+    <!-- 유튜브 뮤직비디오 영상 삽입 -->
     <div class="video-card">
       <iframe width="320" height="180" 
         src="https://www.youtube.com/embed/1-1TGNmQqZA" 
@@ -90,6 +113,7 @@
       </iframe>
     </div>
     
+    <!-- 앨범 정보 테이블 -->
     <div>
       <table border="1"> 
         <thead>
@@ -103,6 +127,7 @@
         </thead>
         <tbody>
           <tr>
+            <!-- 앨범 이미지 클릭 시 상세페이지로 이동 -->
             <td><a href="pages/album2.html"><img src="./media/album2.png" alt="DAYDREAM" width="100" height="100" title="이미지를 클릭하면 DAYDREAM 상세페이지로 이동합니다."></a></td>
             <td>DAYDREAM</td>
             <td>2016.03.30</td>
@@ -112,7 +137,10 @@
         </tbody>
       </table>
     </div>
+
     <hr>
+
+    <!-- 앨범 판매처 링크 -->
     <h3>앨범판매처</h3>
     <li><a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=80375857"  target="_blank">알라딘</a></li>
     <li><a href="https://www.yes24.com/product/goods/25249808"  target="_blank">yes24</a></li>

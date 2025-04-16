@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Fourever</title>
   <style>
+    /* 전체 레이아웃 및 스타일 */
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f2f2f2;
@@ -15,6 +16,7 @@
       color: #444;
     }
 
+    /* 테이블 스타일 */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -39,10 +41,12 @@
       border-bottom: none;
     }
 
+    /* 이미지 스타일 */
     img {
       border-radius: 8px;
     }
 
+    /* 구분선 */
     hr {
       border: none;
       height: 1px;
@@ -50,6 +54,7 @@
       margin: 40px 0 20px 0;
     }
 
+    /* 리스트 */
     ul {
       list-style: none;
       padding: 0;
@@ -59,6 +64,7 @@
       margin-bottom: 8px;
     }
 
+    /* 링크 스타일 */
     a {
       color: #0077cc;
       text-decoration: none;
@@ -68,13 +74,20 @@
       text-decoration: underline;
     }
 
+    /* 유튜브 영상 카드 */
     .video-card {
       margin: 15px 0 30px 0;
+    }
+
+    /* 테이블 hover 효과 */
+    tbody tr:hover {
+      background-color: #e8f4fd;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-
+  <!-- 앨범 정보 -->
   <h2>Fourever</h2>
   <hr>
   <h3>미니 8집</h3>
@@ -83,7 +96,7 @@
     <li><a href="https://www.melon.com/album/detail.htm?albumId=11444397" target="_blank">노래 듣기(melon)</a></li>
     <li><a href="https://youtu.be/RowlrvmyFEk?feature=shared" target="_blank">뮤비 보기(Youtube)</a></li>
   </ul>
-
+<!-- 유튜브 뮤직비디오 삽입 -->
   <div class="video-card">
     <iframe width="320" height="180" 
       src="https://www.youtube.com/embed/RowlrvmyFEk" 
@@ -92,7 +105,7 @@
       allowfullscreen>
     </iframe>
   </div>
-
+<!-- 앨범 정보 테이블 -->
   <table>
     <thead>
       <tr>
@@ -115,6 +128,7 @@
   </table>
 
   <hr>
+    <!-- 앨범 판매처 링크 -->
   <h3>앨범판매처</h3>
   <ul>
     <li><a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=335788254"  target="_blank">알라딘</a></li>
